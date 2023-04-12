@@ -35,7 +35,7 @@ function searchWeather() {
       weatherData.temperature = data.main.temp;
       updateWeather(weatherData);
     } else if (http.readyState === XMLHttpRequest.DONE && http.status !== 200) {
-      alert("Something went wrong!");
+      alert("Something went wrong! Please enter city name in full!");
       loadingText.style.display = "none";
     }
   };
