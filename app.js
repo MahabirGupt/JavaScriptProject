@@ -10,6 +10,7 @@ function searchWeather() {
   var cityName = searchCity.value;
   // check if user has not entered anything
   if (cityName.trim().length == 0) {
+    loadingText.style.display = "none";
     return alert("Please enter a city name");
   }
   // set-up a new HTTP request
@@ -35,6 +36,7 @@ function searchWeather() {
       updateWeather(weatherData);
     } else if (http.readyState === XMLHttpRequest.DONE && http.status !== 200) {
       alert("Something went wrong!");
+      loadingText.style.display = "none";
     }
   };
   http.send();
@@ -45,7 +47,7 @@ function updateWeather(weatherData) {
   weatherDescription.textContent = weatherData.description;
   weatherTemperature.textContent = weatherData.temperature;
 
-  // to hide the loading icon when thw data is there
+  // to hide the loading icon when the data is there
   loadingText.style.display = "none";
   // to display the data
   weatherBox.style.display = "block";
