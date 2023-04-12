@@ -11,6 +11,7 @@ Object.defineProperty(Weather.prototype, "temperature", {
     return this._temperature;
   },
   set: function (value) {
-    this._temperature = (value * 1.8 + 32).toFixed(2) + "F."; //conversion formula from celcius to fahrenheit and round off to 2 d.p
+    // this._temperature = (value * 1.8 + 32).toFixed(2) + "F."; //conversion formula from celcius to fahrenheit and round off to 2 d.p
+    this._temperature = value.toFixed(1) + " \u00B0 c";
   }, // with the unit in Fahrenheit
 }); // configure the property with a JS object
